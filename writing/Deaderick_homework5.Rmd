@@ -21,9 +21,12 @@ homicide_data <- read_csv("data/homicide-data.csv")
 ```
 
 ```{r data_cleaning}
-homicide_data %>% 
+homicide_data <- homicide_data %>% 
   filter(city == "Baltimore") %>% 
   mutate(reported_date = ymd(reported_date),
          reported_month = month(reported_date))
-  
+         
+homicide_data <- homicide_data %>%        
+  mutate(season = if_else(homicide_data$reported_month %in% c(11, 12, 1, 2, 3, 4), 
+                          "Winter", "Summer"))
 ```
