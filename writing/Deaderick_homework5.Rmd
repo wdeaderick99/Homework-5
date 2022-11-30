@@ -42,5 +42,8 @@ homicide_data %>%
   geom_smooth(aes(y = n), se = FALSE)+
   ylab("Monthly Homicides")+
   xlab("Date")+
-  theme_dark()
+  ggtitle("Homicides in Baltimore, MD")+
+  theme_dark()+
+  theme(legend.position = "bottom")+
+  scale_fill_manual(values = c("grey", "light blue"), name = NULL)
 ```
