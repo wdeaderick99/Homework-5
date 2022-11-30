@@ -42,8 +42,7 @@ homicide_data %>%
   geom_smooth(aes(y = n), se = FALSE)+
   geom_vline(xintercept = ymd(20150412), linetype = 2, color = "red", size = 1)+
   annotate("text",
-           x = ymd(20141215),
-           xend = ymd(20141230), 
+           x = ymd(20140501), 
            y = 40, 
            label = "Arrest of \n Freddie Gray" , 
            color = "light grey")+
