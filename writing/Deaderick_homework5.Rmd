@@ -13,8 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggplot2)
 library(ggthemes)
+library(lubridate)
 ```
 
-```{r}
+```{r read_data}
 homicide_data <- read_csv("data/homicide-data.csv")
+```
+
+```{r data_cleaning}
+homicide_data %>% 
+  filter(city == "Baltimore") %>% 
+  mutate(reported_date = ymd(reported_date),
+         reported_month = month(reported_date))
+  
 ```
