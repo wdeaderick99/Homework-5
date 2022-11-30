@@ -40,6 +40,13 @@ homicide_data %>%
   ggplot(mapping = aes(x = reported_date)) +
   geom_histogram(aes(fill = season), bins = 132)+
   geom_smooth(aes(y = n), se = FALSE)+
+  geom_vline(xintercept = ymd(20150412), linetype = 2, color = "red", size = 1)+
+  annotate("text",
+           x = ymd(20141215),
+           xend = ymd(20141230), 
+           y = 40, 
+           label = "Arrest of \n Freddie Gray" , 
+           color = "light grey")+
   ylab("Monthly Homicides")+
   xlab("Date")+
   ggtitle("Homicides in Baltimore, MD")+
